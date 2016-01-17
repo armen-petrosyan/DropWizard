@@ -1,0 +1,40 @@
+database:
+
+  # the name of your JDBC driver
+  driverClass: com.mysql.jdbc.Driver
+
+  # the username
+  user: root
+
+  # the password
+  password: 
+
+  # the JDBC URL
+  url: jdbc:mysql://localhost/DropWizard
+
+  properties:
+    hibernate.dialect: org.hibernate.dialect.MySQLDialect
+    hibernate.hbm2ddl.auto: update
+
+server:
+#  softNofileLimit: 1000
+#  hardNofileLimit: 1000
+  applicationConnectors:
+    - type: http
+      port: 9080
+    - type: https
+      port: 8443
+      keyStorePath: example.keystore
+      keyStorePassword: example
+      validateCerts: false
+      validatePeers: false
+  adminConnectors:
+    - type: http
+      port: 9081
+    - type: https
+      port: 8444
+      keyStorePath: example.keystore
+      keyStorePassword: example
+      validateCerts: false
+      validatePeers: false
+
